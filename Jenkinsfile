@@ -4,21 +4,21 @@ pipeline {
     stage('build') {
       steps {
         echo 'step 1 - compile app'
-        sh 'mv compile'
+        sh 'mvn compile'
       }
     }
 
     stage('test') {
       steps {
         echo 'step 2 run test'
-        sh 'mv clean test'
+        sh 'mvn clean test'
       }
     }
 
     stage('package') {
       steps {
         echo 'step 3 package app'
-        sh 'mv package -DskipTests'
+        sh 'mvn package -DskipTests'
       }
     }
 
